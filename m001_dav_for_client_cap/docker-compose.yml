@@ -1,0 +1,17 @@
+version: "3.1"
+
+services:
+  apache-rp:
+    build: ./apache-rp/
+    networks:
+     - front
+     - back
+    ports:
+     - "80:80"
+     - "443:443"
+
+networks:
+  front:
+    driver: bridge
+  back:
+    driver: bridge
