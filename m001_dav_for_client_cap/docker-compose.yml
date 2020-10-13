@@ -7,8 +7,15 @@ services:
      - front
      - back
     ports:
-     - "80:80"
-     - "443:443"
+     - "8080:80"
+     - "8443:443"
+
+  apache-dav:
+    build: ./apache-dav/
+    links:
+      - apache-rp:m001
+    networks:
+     - back
 
 networks:
   front:
