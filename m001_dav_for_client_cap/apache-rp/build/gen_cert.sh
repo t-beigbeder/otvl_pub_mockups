@@ -11,7 +11,7 @@ if [ ! -f CA_otvl_web.csr ] ; then
 fi
 openssl x509 -noout -text -in CA_otvl_web.crt | egrep "Subject:|Issuer:|Serial Number:|Not After :"
 
-count=11
+count=12
 
 gen_cert() {
   count=`expr $count + 1`

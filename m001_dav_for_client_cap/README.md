@@ -1,3 +1,5 @@
+# Presentation
+
 This is a mockup to deploy a
 [WebDAV](http://www.webdav.org/)
 server that will enable to test clients capabilities.
@@ -12,3 +14,61 @@ It has been tested with
 
 - docker 18.09
 - docker-compose 1.21
+
+# Using the mockup
+
+## Environment setup
+
+### Install docker and docker-compose.
+
+Install docker on debian
+
+    # apt-get update && \
+      apt-get upgrade && \
+      apt-get install \
+        apt-transport-https \
+        ca-certificates \
+        curl \
+        gnupg-agent \
+        software-properties-common
+    # curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+    # apt-key fingerprint 0EBFCD88
+    # add-apt-repository \
+       "deb [arch=amd64] https://download.docker.com/linux/debian \
+       $(lsb_release -cs) \
+       stable"
+    # apt-get update && \
+      apt-get install docker-ce docker-ce-cli containerd.io
+    # docker run hello-world
+    # usermod -aG docker USER
+    $ docker run hello-world
+
+Install docker-compose on debian
+
+    # curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+Build
+
+    $ docker-compose build
+
+Run
+
+    $ docker-compose up -d
+
+Check the logs
+
+    $ docker-compose logs -f
+
+The http reverse proxy exposes http on port 8080 and https on port 8443.
+The TLS certificate is autosigned, generated for a host pm01.otvl.org.
+
+Resulting URLs:
+
+- [https://pm01.otvl.org:8443/](https://pm01.otvl.org:8443/)
+- [https://pm01.otvl.org:8443/dav/](https://pm01.otvl.org:8443/dav/)
+- [https://pm01.otvl.org:8443/app/version](https://pm01.otvl.org:8443/app/version)
+
+Authorized users/passwords:
+
+- user1/p1
+- user2/p2
