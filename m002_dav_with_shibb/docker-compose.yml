@@ -15,13 +15,6 @@ services:
     networks:
      - back
 
-  python-http:
-    build: ./python-http/
-    links:
-      - apache-rp:m001
-    networks:
-     - back
-
 networks:
   front:
     driver: bridge

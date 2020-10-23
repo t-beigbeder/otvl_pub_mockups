@@ -2,7 +2,10 @@
 
 This is a mockup to deploy a
 [WebDAV](http://www.webdav.org/)
-server that will enable to test clients capabilities.
+server authenticated with SAML using a
+[Shibboleth](https://www.shibboleth.net/)
+implementation,
+this mockup will enable to test clients capabilities.
 
 Typically, a better understanding of the black box
 implementing
@@ -21,12 +24,22 @@ It has been tested with
 
 - apache-rp: apache reverse proxy that performs basic authentication againts a htpasswd file
 - apache-dav: apache WebDAV server
-- python-http: application in python
-  could be used to add additional tests requiring dynamic behaviour
+
+## Gluu server
+
+[Gluu server](https://www.gluu.org/features/single-sign-on/)
+is an open source identity infrastructure that provides SAML but also OAuth2/OpenIDConnect.
+
+For this mockup it is also installed as docker containers relying internally on docker compose too.
 
 # Using the mockup
 
 ## Environment setup
+
+### Gluu server installation
+
+The documentation is there
+[https://gluu.org/docs/gluu-server/installation-guide/install-docker/](https://gluu.org/docs/gluu-server/installation-guide/install-docker/)
 
 ### Install docker and docker-compose.
 
