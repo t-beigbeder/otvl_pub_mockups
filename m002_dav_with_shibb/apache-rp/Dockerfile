@@ -1,13 +1,16 @@
-FROM httpd:2.4 as stage
+FROM debian:buster-slim
 RUN apt-get update && LC_ALL=C DEBIAN_FRONTEND=noninteractive apt-get install -yqq --no-install-recommends \
-        openssl \
+        openssl apache2 libapache2-mod-shib2 \
 && rm -rf /var/lib/apt/lists/*
+
+COPY etc/apache2/sites-available/ /etc/apache2/sites-available/
+RUN a2enmod shib ssl \
+  && a2ensite default ssl
+
 COPY build/gen_cert.sh /srv/
 RUN mkdir /srv/ssl && \
   /srv/gen_cert.sh
 
-FROM httpd:2.4
-COPY --from=stage /srv/ssl/pm02.* /srv/ssl/
-COPY apache2/conf/ /usr/local/apache2/conf/
-RUN htpasswd -cb /srv/htpasswd user1 p1
-RUN htpasswd -b /srv/htpasswd user2 p2
+COPY scripts/ /scripts/
+RUN chmod ugo+rx /scripts/*
+CMD ["/scripts/start.sh"]
