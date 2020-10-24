@@ -99,9 +99,9 @@
 
         <!-- Simple file-based resolvers for separate signing/encryption keys. -->
         <CredentialResolver type="File" use="signing"
-            key="sp-signing-key.pem" certificate="sp-signing-cert.pem"/>
+            key="pm02.otvl.org.key" certificate="pm02.otvl.org.crt"/>
         <CredentialResolver type="File" use="encryption"
-            key="sp-encrypt-key.pem" certificate="sp-encrypt-cert.pem"/>
+            key="pm02.otvl.org.key" certificate="pm02.otvl.org.crt"/>
 
     </ApplicationDefaults>
 

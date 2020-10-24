@@ -9,7 +9,9 @@ RUN a2enmod shib ssl \
 
 COPY build/gen_cert.sh /srv/
 RUN mkdir /srv/ssl && \
-  (cd /srv/ssl && /srv/gen_cert.sh)
+  (cd /srv/ssl && /srv/gen_cert.sh && cp -p pm02.otvl.org.crt pm02.otvl.org.key /etc/shibboleth/) && \
+  mkdir -p /run/shibboleth && \
+  su -s /usr/sbin/shibd _shibd -- -t -f -c /etc/shibboleth/shibboleth2.xml -p /run/shibboleth/shibd.pid -w 30
 
 COPY scripts/ /scripts/
 RUN chmod ugo+rx /scripts/*
