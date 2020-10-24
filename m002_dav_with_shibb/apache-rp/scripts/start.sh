@@ -1,7 +1,5 @@
 #!/bin/sh
 
-set -x
-cat /etc/apache2/sites-available/default-ssl.conf
-
-#
-exec apachectl -DFOREGROUND "$@"
+# service shibd start
+# exec apachectl -DFOREGROUND "$@"
+exec /usr/bin/supervisord --nodaemon
