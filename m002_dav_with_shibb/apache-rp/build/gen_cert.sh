@@ -8,3 +8,4 @@ gen_cert() {
 }
 
 gen_cert pm02.otvl.org pm02.otvl.org
+gen_cert dxpydk dxpydk

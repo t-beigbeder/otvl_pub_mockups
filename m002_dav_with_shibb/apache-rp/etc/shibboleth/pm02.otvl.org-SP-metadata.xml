@@ -1,0 +1,36 @@
+<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" entityID="https://pm02.otvl.org/shibboleth">
+  <md:SPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol urn:oasis:names:tc:SAML:1.1:protocol">
+    <md:KeyDescriptor>
+      <ds:KeyInfo>
+        <ds:X509Data>
+          <ds:X509Certificate>
+MIIDnzCCAoegAwIBAgIUUYZP2A0Pfnb7LNotBRMpHeGoKkowDQYJKoZIhvcNAQEL
+BQAwXzELMAkGA1UEBhMCRlIxEjAQBgNVBAgMCU9jY2l0YW5pZTERMA8GA1UEBwwI
+VG91bG91c2UxETAPBgNVBAoMCG90dmwgb3JnMRYwFAYDVQQDDA1wbTAyLm90dmwu
+b3JnMB4XDTIwMTAyNTEwMzUzOFoXDTMwMTAyMzEwMzUzOFowXzELMAkGA1UEBhMC
+RlIxEjAQBgNVBAgMCU9jY2l0YW5pZTERMA8GA1UEBwwIVG91bG91c2UxETAPBgNV
+BAoMCG90dmwgb3JnMRYwFAYDVQQDDA1wbTAyLm90dmwub3JnMIIBIjANBgkqhkiG
+9w0BAQEFAAOCAQ8AMIIBCgKCAQEAn9oJjzyUmcv7I2f0O2GAXQ3A2EgMZz8tydNE
+W94/H8G58QW+qu7Xbu++SbO8zgEds0Gnn9SNyjEf6ND/f1vtv1ZsbUq0q0wRbCpO
+El/OD0To1DfWkm0lq14WX3c55p6JvzRiWoCD1z1tr9PmudTVvhwUnnyN5OpiWmN4
+BIK9ML6sLUxv6GbR0fBhjnqZLS1feeeDTejWL+SlUY0ivLPB0cqZKHHQGx6nF8eH
+o7o2QjpJNXwodnrqVbIo0TlOYlXRZXChH1zy9mEaqNmSCwB4PBOd8CNmngEnoqR9
+vaQZoPFQD7Ty7Znv22e70vyb4q1cG4ZPeyAEfI1wwJrJVywLaQIDAQABo1MwUTAd
+BgNVHQ4EFgQUjAx6mKOzFu4p5qgeCjhrBJk5v1QwHwYDVR0jBBgwFoAUjAx6mKOz
+Fu4p5qgeCjhrBJk5v1QwDwYDVR0TAQH/BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOC
+AQEABDBP5avaEyE219c9FlXJ6bdYr4aHQ8ASV7Ns+81vl7gTUSxpVgBVPuFWNwkJ
+jO3Q42jVBH//EPhK4IhEvecabpn73lDmVtWTfvBq+HQ9hI6c8wpERBn5XNWOe+oI
+T9MPq7aMA5O5IgmzPF5YyKadMYl8fC6gKD90At++XGBz6ZDn5Pn3fCKEoqB1ZYv8
+pIHOAgyqSOpuiWDNbjwS/4Man8+9cRcjlO1KHMWkCs75NsTAfpnKEt36FkX3tp6/
+lkmecmer3/iG+wp+2RH4jYZdKolmvwedMwIHVkUGrj4kflqghVDGO8dWyKzG7ziL
+w+cZg/TYz3mSklHN8UrUcy23ew==
+          </ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </md:KeyDescriptor>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://pm02.otvl.org/Shibboleth.sso/SAML2/POST" index="1"/>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" Location="https://pm02.otvl.org/Shibboleth.sso/SAML2/POST-SimpleSign" index="2"/>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:PAOS" Location="https://pm02.otvl.org/Shibboleth.sso/SAML2/ECP" index="3"/>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:1.0:profiles:browser-post" Location="https://pm02.otvl.org/Shibboleth.sso/SAML/POST" index="4"/>
+  </md:SPSSODescriptor>
+</md:EntityDescriptor>
