@@ -9,16 +9,21 @@ RUN a2enmod shib ssl \
   && a2ensite default ssl
 
 #ARG SPDN=pm02.otvl.org
-ARG SPDN=dxpydk
+ARG SPDN=pm02.srv.dxpydk
+ARG IDPDN=gluu.srv.dxpydk
 
 COPY build/gen_cert.sh /srv/
 RUN mkdir /srv/ssl && \
-  (cd /srv/ssl && /srv/gen_cert.sh && shib-metagen -c ${SPDN}.crt -h ${SPDN} -e "https://${SPDN}/shibboleth" > ${SPDN}.SP-metadata.xml && more ${SPDN}.*)
+  (cd /srv/ssl && /srv/gen_cert.sh && shib-metagen -c ${SPDN}.crt -h ${SPDN} > ${SPDN}.SP-metadata.xml && more ${SPDN}.*) && exit 0
 COPY etc/shibboleth/${SPDN}-SP.key /etc/shibboleth/SP.key
 COPY etc/shibboleth/${SPDN}-SP.crt /etc/shibboleth/SP.crt
 COPY etc/shibboleth/${SPDN}-SP-metadata.xml /etc/shibboleth/SP-metadata.xml
 COPY etc/shibboleth/shibboleth2.xml /etc/shibboleth/shibboleth2.xml
+
 RUN sed -i -e "s=@@SPDN@@=${SPDN}="g /etc/shibboleth/shibboleth2.xml
+RUN sed -i -e "s=@@IDPDN@@=${IDPDN}="g /etc/shibboleth/shibboleth2.xml
+RUN sed -i -e "s=@@SPDN@@=${SPDN}="g /etc/apache2/sites-available/ssl.conf
+RUN sed -i -e "s=@@SPDN@@=${SPDN}="g /etc/apache2/apache2.conf
 
 RUN mkdir -p /run/shibboleth && \
   chown _shibd:_shibd /run/shibboleth /etc/shibboleth/SP* && \

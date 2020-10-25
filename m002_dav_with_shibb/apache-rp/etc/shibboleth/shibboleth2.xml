@@ -30,7 +30,7 @@
             entityID property and adjust discoveryURL to point to discovery service.
             You can also override entityID on /Login query string, or in RequestMap/htaccess.
             -->
-            <SSO entityID="https://gluu.srv.dxpydk/idp/shibboleth"
+            <SSO entityID="https://@@IDPDN@@/idp/shibboleth"
                  discoveryProtocol="SAMLDS" discoveryURL="https://ds.example.org/DS/WAYF">
               SAML2
             </SSO>
@@ -67,7 +67,7 @@
         <!--
         <MetadataProvider type="XML" validate="true" path="partner-metadata.xml"/>
         -->
-        <MetadataProvider type="XML" url="https://gluu.srv.dxpydk/idp/shibboleth"/>
+        <MetadataProvider type="XML" url="https://@@IDPDN@@/idp/shibboleth"/>
 
         <!-- Example of remotely supplied batch of signed metadata. -->
         <!--
