@@ -3,20 +3,11 @@ version: "3.1"
 services:
   apache-rp:
     build: ./apache-rp/
-    networks:
-     - front
-     - back
     ports:
      - "8080:80"
      - "8443:443"
+    extra_hosts:
+      - "gluu.srv.dxpydk:192.168.122.139"
 
   apache-dav:
     build: ./apache-dav/
-    networks:
-     - back
-
-networks:
-  front:
-    driver: bridge
-  back:
-    driver: bridge

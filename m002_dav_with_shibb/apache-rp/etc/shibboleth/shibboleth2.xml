@@ -67,6 +67,7 @@
         <!--
         <MetadataProvider type="XML" validate="true" path="partner-metadata.xml"/>
         -->
+        <MetadataProvider type="XML" url="https://gluu.srv.dxpydk/idp/shibboleth"/>
 
         <!-- Example of remotely supplied batch of signed metadata. -->
         <!--
