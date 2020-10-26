@@ -39,9 +39,9 @@ if/Z9JUAVDaizqREr2UvF4Ca97n59/68uLvMVC1ZvByiaDI=
         </ds:X509Data>
       </ds:KeyInfo>
     </md:KeyDescriptor>
-    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://pm02.srv.dxpydk/Shibboleth.sso/SAML2/POST" index="1"/>
-    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" Location="https://pm02.srv.dxpydk/Shibboleth.sso/SAML2/POST-SimpleSign" index="2"/>
-    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:PAOS" Location="https://pm02.srv.dxpydk/Shibboleth.sso/SAML2/ECP" index="3"/>
-    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:1.0:profiles:browser-post" Location="https://pm02.srv.dxpydk/Shibboleth.sso/SAML/POST" index="4"/>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://pm02.srv.dxpydk:8443/Shibboleth.sso/SAML2/POST" index="1"/>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" Location="https://pm02.srv.dxpydk:8443/Shibboleth.sso/SAML2/POST-SimpleSign" index="2"/>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:PAOS" Location="https://pm02.srv.dxpydk:8443/Shibboleth.sso/SAML2/ECP" index="3"/>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:1.0:profiles:browser-post" Location="https://pm02.srv.dxpydk:8443/Shibboleth.sso/SAML/POST" index="4"/>
   </md:SPSSODescriptor>
 </md:EntityDescriptor>
