@@ -1,0 +1,95 @@
+# --------------------------------------
+# Python
+# --------------------------------------
+# Ignore stuff like : Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+wheels/
+share/python-wheels/
+*.egg-info/
+*.egg
+eggs/
+.eggs/
+
+
+# Ignore python env
+api_product/venv/
+venv-*
+Pipfile
+Pipfile.lock
+
+
+# --------------------------------------
+# Project
+# --------------------------------------
+
+# Ignore project files
+shell/local_exports.sh
+shell/local_exports_tests.sh
+shell/docker_start_fresh_container.sh
+
+# Doc          tmp --> don't ignore doc
+# doc/*
+# !doc/.keep
+
+# Dev tools
+node_modules/
+yarn-error.log
+
+# Ignore Jupyter
+notebook/*
+.ipynb_checkpoints
+
+# Ignore coverage
+test/htmlcov/
+report/
+test/.coveragerc
+
+# Tmp files
+tmp/
+
+# Ignore Working files
+TEST.*
+OLD.*
+ORIG.*
+TEST.*
+
+
+# --------------------------------------
+# Tools
+# --------------------------------------
+.coverage
+
+
+# --------------------------------------
+# OS
+# --------------------------------------
+# Ignore OSX files
+.DS_Store
+
+
+# --------------------------------------
+# Editors and IDE
+# --------------------------------------
+/.idea
+.vscode
+*~
+
+
+# Vim artifacts
+**.swp
+
+.mypy_cache/
+
+/common
+api_product/data/data
+mongo_data/
+.env
+package.json
+package-lock.json
+
+
+#######################
+.local
+*.bak

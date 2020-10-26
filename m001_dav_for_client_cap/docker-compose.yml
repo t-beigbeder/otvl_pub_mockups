@@ -29,3 +29,32 @@ networks:
     driver: bridge
   back:
     driver: bridge
+version: "3.1"
+
+services:
+  apache-rp:
+    build: ./apache-rp/
+    networks:
+     - front
+     - back
+    ports:
+     - "8080:80"
+     - "8443:443"
+
+  apache-dav:
+    build: ./apache-dav/
+    networks:
+     - back
+
+  python-http:
+    build: ./python-http/
+    links:
+      - apache-rp:m001
+    networks:
+     - back
+
+networks:
+  front:
+    driver: bridge
+  back:
+    driver: bridge
