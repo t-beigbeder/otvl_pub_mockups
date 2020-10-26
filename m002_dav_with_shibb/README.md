@@ -87,11 +87,5 @@ The TLS certificate is autosigned, generated for a host pm01.otvl.org.
 
 Resulting URLs:
 
-- [https://pm01.otvl.org:8443/](https://pm01.otvl.org:8443/)
-- [https://pm01.otvl.org:8443/dav/](https://pm01.otvl.org:8443/dav/)
-- [https://pm01.otvl.org:8443/app/version](https://pm01.otvl.org:8443/app/version)
+- [https://pm02.otvl.org:8443/](https://pm01.otvl.org:8443/)
 
-Authorized users/passwords:
-
-- user1/p1
-- user2/p2
