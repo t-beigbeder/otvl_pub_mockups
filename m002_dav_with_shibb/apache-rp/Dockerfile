@@ -5,7 +5,8 @@ RUN apt-get update && LC_ALL=C DEBIAN_FRONTEND=noninteractive apt-get install -y
 && rm -rf /var/lib/apt/lists/*
 
 COPY etc/ /etc/
-RUN a2enmod shib ssl proxy proxy_http \
+COPY var/ /var/
+RUN a2enmod shib ssl proxy proxy_http rewrite headers setenvif \
   && a2ensite default ssl
 
 #ARG SPDN=pm02.otvl.org

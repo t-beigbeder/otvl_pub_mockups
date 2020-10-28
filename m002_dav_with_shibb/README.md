@@ -25,21 +25,14 @@ It has been tested with
 - apache-rp: apache reverse proxy that performs basic authentication againts a htpasswd file
 - apache-dav: apache WebDAV server
 
-## Gluu server
+## IdP provider
 
-[Gluu server](https://www.gluu.org/features/single-sign-on/)
-is an open source identity infrastructure that provides SAML but also OAuth2/OpenIDConnect.
-
-For this mockup it is also installed as docker containers relying internally on docker compose too.
+[https://samltest.id/](https://samltest.id/)
+is a free SAML 2.0 IdP SaaS provider.
 
 # Using the mockup
 
 ## Environment setup
-
-### Gluu server installation
-
-The documentation is there
-[https://gluu.org/docs/gluu-server/installation-guide/install-docker/](https://gluu.org/docs/gluu-server/installation-guide/install-docker/)
 
 ### Install docker and docker-compose.
 
