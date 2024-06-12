@@ -71,6 +71,9 @@ spec:
         args:
         - --leader-elect
         image: controller:latest
+        env:
+          - name: MEMCACHED_IMAGE
+            value: "memcached:1.4.36-alpine"
         name: manager
         securityContext:
           allowPrivilegeEscalation: false
