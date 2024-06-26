@@ -12,7 +12,7 @@ spec:
     listKind: GuestbookList
     plural: guestbooks
     singular: guestbook
-  scope: Namespaced
+  scope: Cluster
   versions:
   - name: v1
     schema:
@@ -37,15 +37,46 @@ spec:
           metadata:
             type: object
           spec:
-            description: GuestbookSpec defines the desired state of Guestbook
+            description: |-
+              EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
+              NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
+              GuestbookSpec defines the desired state of Guestbook
             properties:
-              foo:
-                description: Foo is an example field of Guestbook. Edit guestbook_types.go
-                  to remove/update
+              alias:
+                enum:
+                - Phone
+                - Address
+                - Name
                 type: string
+              configMapName:
+                description: Name of the ConfigMap for GuestbookSpec's configuration
+                maxLength: 15
+                minLength: 1
+                type: string
+              size:
+                description: Quantity of instances
+                format: int32
+                maximum: 10
+                minimum: 1
+                type: integer
+            required:
+            - configMapName
+            - size
             type: object
           status:
             description: GuestbookStatus defines the observed state of Guestbook
+            properties:
+              active:
+                description: PodName of the active Guestbook node.
+                type: string
+              standby:
+                description: PodNames of the standby Guestbook nodes.
+                items:
+                  type: string
+                type: array
+            required:
+            - active
+            - standby
             type: object
         type: object
     served: true
