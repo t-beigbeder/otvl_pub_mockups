@@ -40,6 +40,9 @@ func main() {
 	islog.IlogF1()
 	zaplog.ZaplogCtxF1(slogctx)
 	islog.IlogCtxF1(slogctx)
+
+	sl2 := elog.AsSlog(logger)
+	sl2.Info("Hello from Slog sl2")
 }
 
 func sub() {
