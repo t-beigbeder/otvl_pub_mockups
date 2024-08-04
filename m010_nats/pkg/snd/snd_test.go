@@ -36,10 +36,6 @@ func TestServer(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	//_, err = jss.AddConsumer("example-stream", &nats.ConsumerConfig{})
-	//if err != nil {
-	//	t.Fatal(err)
-	//}
 	_, err = jss.Publish("example-subject", []byte("Hello jss!"))
 	if err != nil {
 		t.Fatal(err)
