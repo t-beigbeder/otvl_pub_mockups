@@ -31,14 +31,15 @@ func TestServer(t *testing.T) {
 		Name:     "example-stream",
 		Subjects: []string{"example-subject"},
 		MaxBytes: 1024,
+		Storage:  nats.MemoryStorage,
 	})
 	if err != nil {
 		t.Fatal(err)
 	}
-	_, err = jss.AddConsumer("example-stream", &nats.ConsumerConfig{})
-	if err != nil {
-		t.Fatal(err)
-	}
+	//_, err = jss.AddConsumer("example-stream", &nats.ConsumerConfig{})
+	//if err != nil {
+	//	t.Fatal(err)
+	//}
 	_, err = jss.Publish("example-subject", []byte("Hello jss!"))
 	if err != nil {
 		t.Fatal(err)
@@ -62,6 +63,10 @@ func TestServer(t *testing.T) {
 	_ = msgs
 	for msg := range msgs.Messages() {
 		fmt.Printf("Received a JetStream message: %s\n", string(msg.Data()))
+		err = msg.Ack()
+		if err != nil {
+			t.Fatal(err)
+		}
 	}
 	ns.Shutdown()
 }
